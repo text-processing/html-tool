@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Instrument</title>
+    <link rel="stylesheet" href="css/new.css">
+</head>
+<body>
+  <div class="page page-scroll">
+    <div class="sidemenu">
+
+      <div class="menu-head">Menu</div>
+
+      <div class="menu-body">
+        <input type="file" id="your-file" style="display: none;">
+        <label id="file-label" class="label-file" for="your-file">Load File</label>
+
+        <input type="file" id="your-ban" style="display: none;">
+        <label id="ban-label" class="label-file" for="your-ban" style="display: none;">Load ban file</label>
+
+        <div class="label-file" id="search_head" style="display: none;">Settings</div>
+
+        <div class="settings" id="search_body" style="display: none;">
+          <div>
+            Choose selection color:
+            <select style="width: 100%;" id="text_color">
+              <option style="color: yellow;">Yellow</option>
+              <option style="color: red;">Red</option>
+              <option style="color: pink;">Pink</option>
+              <option style="color: green;">Green</option>
+              <option style="color: lightblue;">Lightblue</option>
+              <option style="color: orange;">Orange</option>
+              <option style="color: purple;">Purple</option>
+              <option style="color: gray;">Gray</option>
+              <option style="color: cyan;">Cyan</option>
+              <option style="color: lightgreen;">Lightgreen</option>
+            </select>
+          </div>
+          <div class="label-file" onclick="clearSelection();" style="margin-top: 5px;">Clear selection</div>
+        </div>
+
+        <a class="label-file" id="load_json" onclick="prepareDataToJSON();" style="display: none;">Download JSON</a>
+        
+      </div>
+
+    </div>
+
+    <div class="workzone">
+      <div class="file-scroll" id="file_title"></div>
+      <div class="workspace scroll">
+        
+        <div class="text-opener" id="text_opener" onclick="openText();">▲</div>
+
+        <div style="display: flex;" id="text_window">
+          <div class="workspace-left scroll" id="workarea">
+          </div>
+
+          <div class="workspace-right">
+            <table class="wordlist" cellspacing="0">
+              <thead>
+                <tr>
+                  <th class="wordlist-title" colspan="2">Word's list</th>
+                </tr>
+                <tr>
+                  <th>Word</th>
+                  <th>Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                      <div class="scroll words-table">
+                          <table id="words" cellspacing="0"></table>
+                      </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="search-opener" id="opener" onclick="openSearch();">▼</div>
+
+        <div class="search-input" style="display: none;" id="search_input">
+          <div class="keyword">
+            Keyword:
+            <select id="keywords"></select>
+          </div>
+
+          <div class="phrase">
+            Phrase:
+            <input type="text" id="phrase">
+          </div>
+
+          <div class="label-file search-button" onclick="searchAction();">SEARCH</div>
+        </div>
+
+        <div class="results">
+
+          <div class="results-header" id="results_head" onclick="openResults();">RESULTS</div>
+
+          <div class="results-body-opener" id="result_body_opener" onclick="openResultBody();" style="display:none">▲</div>
+
+          <div class="results-body" id="results_body" style="display: none;">
+
+            <div id="results-checker-opener" class="results-checker-opener" onclick="hideResultsChecker();">
+              ◄
+            </div>
+
+            <div id="results-checker" class="results-checker" style="display: block;">
+
+              <select style="border-bottom: 2px solid black; padding: 5px; text-align: center; background: #efd7ac;" id="list_chooser">
+                <option >Selected lexical aspects:</option>
+                <option >Selected gramatical aspects:</option>
+              </select>
+
+              <div class="checkers" id="anaphora_check">
+                <input type="checkbox" id="anaphora" name="anaphora" checked>
+                <label for="anaphora">Anaphora</label>
+              </div>
+
+              <div class="checkers" id="epiphora_check">
+                <input type="checkbox" id="epiphora" name="epiphora" checked>
+                <label for="epiphora">Epiphora</label>
+              </div>
+
+              <div class="checkers" id="simploka_check">
+                <input type="checkbox" id="simploka" name="simploka" checked>
+                <label for="simploka">Symploce</label>
+              </div>
+
+              <div class="checkers" id="anadiplosis_check">
+                <input type="checkbox" id="anadiplosis" name="anadiplosis" checked>
+                <label for="anadiplosis">Anadiplosis</label>
+              </div>
+
+              <div class="checkers" id="srepeat_check">
+                <input type="checkbox" id="srepeat" name="srepeat" checked>
+                <label for="srepeat">Simple repeat</label>
+              </div>
+
+              <div class="checkers" id="munion_check" style="display: none;">
+                <input type="checkbox" id="munion" name="munion" checked>
+                <label for="munion">Multi union</label>
+              </div>
+
+              <div class="checkers" id="aposiopesis_check" style="display: none;">
+                <input type="checkbox" id="aposiopesis" name="aposiopesis" checked>
+                <label for="aposiopesis">Aposiopesis</label>
+              </div>
+
+            </div>
+
+            <div class="results-table">
+                <div class="results-table-body">
+                  <div class="results-table-column" id="anaphora_column">
+                    <div class="results-table-cell" style="border-bottom: 2px solid black;" onclick="setAnaphorasForUser();">Anaphora</div>
+                    <div class="results-table-cell" id="anaphora_count" onclick="setAnaphorasForUser();">0</div>
+                  </div>
+                  <div class="results-table-column" id="epiphora_column">
+                    <div class="results-table-cell" style="border-bottom: 2px solid black;" onclick="setEpiphorasForUser();">Epiphora</div>
+                    <div class="results-table-cell" id="epiphora_count" onclick="setEpiphorasForUser();">0</div>
+                  </div>
+                  <div class="results-table-column" id="simploka_column">
+                    <div class="results-table-cell" style="border-bottom: 2px solid black;" onclick="setSimplokaForUser();">Symploce</div>
+                    <div class="results-table-cell" id="simploka_count" onclick="setSimplokaForUser();">0</div>
+                  </div>
+                  <div class="results-table-column" id="anadiplosis_column">
+                    <div class="results-table-cell" style="border-bottom: 2px solid black;" onclick="setAnadiplosisForUser();">Anadiplosis</div>
+                    <div class="results-table-cell" id="anadiplosis_count" onclick="setAnadiplosisForUser();">0</div>
+                  </div>
+                  <div class="results-table-column" id="srepeat_column">
+                    <div class="results-table-cell" style="border-bottom: 2px solid black;" onclick="setSrepeatForUser();">Simple repeat</div>
+                    <div class="results-table-cell" id="srepeat_count" onclick="setSrepeatForUser();">0</div>
+                  </div>
+                  <div class="results-table-column" id="munion_column" style="display: none;">
+                    <div class="results-table-cell" style="border-bottom: 2px solid black;" onclick="setMunionForUser();">Multi union</div>
+                    <div class="results-table-cell" id="munion_count" onclick="setMunionForUser();">0</div>
+                  </div>
+                  <div class="results-table-column" id="aposiopesis_column" style="display: none;">
+                    <div class="results-table-cell" style="border-bottom: 2px solid black;" onclick="setAposiopesisForUser();">Aposiopesis</div>
+                    <div class="results-table-cell" id="aposiopesis_count" onclick="setAposiopesisForUser();">0</div>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="results-single-element scroll" id="results_single" style="display: none;">
+            
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/brighters.js"></script>
+  <script src="js/handlers.js"></script>
+  <script src="js/counters.js"></script>
+  <script src="js/display.js"></script>
+  <script src="js/output.js"></script>
+</body>
+</html>

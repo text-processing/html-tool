@@ -43,7 +43,7 @@
 2. [Бойчук Е.И., Джонсон М.А. Специфика ритмической структуры испанских прозаических текстов // Верхневолжский филологический вестник= VerhnevolzhskiPhilologicalBulletin:научный журнал.–Ярославль: РИО ЯГПУ, 2019.–No2(17)– С. 119-129. DOI: 10.24411/2499-9679-2019-10322](https://vv.yspu.org/wp-content/uploads/sites/4/2019/06/VFV-%E2%84%962-2019.pdf)
 3. [Бойчук Е.И. Количественные наречия как средство авторизации художественных текстов (на материале французской прозы 19в.) // Верхневолжский филологический вестник= VerhnevolzhskiPhilologicalBulletin:научный журнал.–Ярославль: РИО ЯГПУ, 2019.–No1(16)– С. 123-130. DOI: 10.24411/2499-9679-2019-10394](https://vv.yspu.org/wp-content/uploads/sites/4/2019/03/VFV-1-19.pdf)
 4. [Шляхтина Е. В. Передача ритмических средств при переводе художественной прозы с английского на русский язык (на материале романа К. Аткинсон «Жизнь после жизни») // Вестник Московского государственного областного университета. Серия: Лингвистика.
-2019. № 5. С. 149–161. DOI: 10.18384/2310-712X-2019-5-149-161](https://www.uni-potsdam.de/fileadmin01/projects/slavistik-slavische-sprachwissenschaft/Bulletin_of_the_Moscow_Region_State_University.pdf#page=149)
+2019. No 5 С. 149–161. DOI: 10.18384/2310-712X-2019-5-149-161](https://www.uni-potsdam.de/fileadmin01/projects/slavistik-slavische-sprachwissenschaft/Bulletin_of_the_Moscow_Region_State_University.pdf#page=149)
 
 ### Публикации в сборниках РИНЦ и тезисы докладов на конференциях
 
